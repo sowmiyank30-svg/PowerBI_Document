@@ -1,0 +1,101 @@
+﻿ProductID,ProductName,Price_AED,Category,Manufacturer
+P078,Casio Men’s Watch,199.00,Accessories,manu3
+P080,Apple AirTag (4 Pack),369.00,Accessories,manu5
+P038,Car Dash Camera 1080p,129.00,Automotive,manu3
+P039,Car Phone Holder Magnetic,29.00,Automotive,manu4
+P087,Car Vacuum Cleaner,49.00,Automotive,manu2
+P088,Car Tire Inflator Electric,89.00,Automotive,manu3
+P089,Car Seat Organizer,39.00,Automotive,manu4
+P090,Synthetic Engine Oil 5L,89.00,Automotive,manu5
+P021,Baby Stroller Compact Fold,499.00,Baby Products,manu1
+P022,Pampers Premium Care (Size 4),72.00,Baby Products,manu2
+P023,Johnson’s Baby Lotion 500ml,18.00,Baby Products,manu3
+P026,L’Oreal Elvive Shampoo,23.00,Beauty,manu1
+P027,Maybelline Superstay Lipstick,45.00,Beauty,manu2
+P056,Braun Hair Dryer 2000W,109.00,Beauty,manu1
+P057,Philips Beard Trimmer,89.00,Beauty,manu2
+P071,Huda Beauty Foundation,135.00,Beauty,manu1
+P072,The Ordinary Hyaluronic Serum,45.00,Beauty,manu2
+P073,Cetaphil Gentle Face Wash,39.00,Beauty,manu3
+P074,OGX Coconut Shampoo,32.00,Beauty,manu4
+P075,MAC Matte Lipstick,99.00,Beauty,manu5
+P001,iPhone 15 Pro Max 256GB,4899.00,Electronics,manu1
+P002,Samsung Galaxy S24 Ultra,4599.00,Electronics,manu2
+P003,Apple AirPods Pro 2,999.00,Electronics,manu3
+P004,Sony WH-1000XM5 Headphones,1399.00,Electronics,manu4
+P008,JBL Charge 5 Speaker,549.00,Electronics,manu3
+P014,"Anker PowerCore 20,000mAh",149.00,Electronics,manu4
+P015,Samsung 55” Crystal UHD TV,1999.00,Electronics,manu5
+P016,LG 65” OLED Smart TV,4499.00,Electronics,manu1
+P017,Canon EOS M50 Camera,2499.00,Electronics,manu2
+P040,USB-C Fast Charger 25W,49.00,Electronics,manu5
+P041,Huawei Freebuds 5,599.00,Electronics,manu1
+P042,Bose SoundLink Flex,699.00,Electronics,manu2
+P043,iPad 10th Gen 64GB,1699.00,Electronics,manu3
+P044,Kindle Paperwhite 11th Gen,529.00,Electronics,manu4
+P045,Lenovo Tab M10,749.00,Electronics,manu5
+P046,Apple Magic Keyboard,599.00,Electronics,manu1
+P047,HP DeskJet 2336 Printer,129.00,Electronics,manu2
+P048,TP-Link WiFi Router AX1500,199.00,Electronics,manu3
+P049,Redmi A3 Smartphone,349.00,Electronics,manu4
+P050,Oppo A78 5G,899.00,Electronics,manu5
+P051,Asus Gaming Laptop i7,3999.00,Electronics,manu1
+P052,Dell Inspiron 15 i5,2399.00,Electronics,manu2
+P053,Samsung Galaxy Tab S9,3499.00,Electronics,manu3
+P054,Insta360 GO 3,1399.00,Electronics,manu4
+P055,GoPro Hero 12,1899.00,Electronics,manu5
+P081,Anker Soundcore Earbuds,129.00,Electronics,manu1
+P082,WD 1TB Portable Hard Drive,189.00,Electronics,manu2
+P083,Seagate 2TB Backup Drive,229.00,Electronics,manu3
+P030,Adidas Running Shoes,250.00,Fashion,manu5
+P031,Nike Air Force 1,399.00,Fashion,manu1
+P032,Under Armour Gym T-Shirt,89.00,Fashion,manu2
+P076,Guess Ladies Handbag,249.00,Fashion,manu1
+P077,Pierre Cardin Wallet,89.00,Fashion,manu2
+P028,Oud Perfume – Arabic Luxury,150.00,Fragrance,manu3
+P029,Davidoff Cool Water,89.00,Fragrance,manu4
+P067,Foldable Computer Desk,149.00,Furniture,manu2
+P068,Ergonomic Office Chair,399.00,Furniture,manu3
+P069,Queen Size Bed Frame,799.00,Furniture,manu4
+P011,PS5 Slim Console,2099.00,Gaming,manu1
+P012,Nintendo Switch OLED,1599.00,Gaming,manu2
+P013,Logitech G Pro Gaming Mouse,299.00,Gaming,manu3
+P084,Gaming Keyboard RGB,119.00,Gaming,manu4
+P085,PS5 Wireless Controller,299.00,Gaming,manu5
+P086,Razer Kraken Headset,279.00,Gaming,manu1
+P091,Organic Honey 1kg,39.00,Grocery,manu1
+P092,California Almonds 1kg,29.00,Grocery,manu2
+P093,Basmati Rice 5kg,27.00,Grocery,manu3
+P094,Nescafé Gold 200g,32.00,Grocery,manu4
+P095,Amul Pure Ghee 1L,45.00,Grocery,manu5
+P037,Smart LED Bulb 9W,18.00,Home,manu2
+P066,IKEA LED Floor Lamp,79.00,Home,manu1
+P070,Memory Foam Pillow,59.00,Home,manu5
+P063,Prestige Cooker Set 8pcs,159.00,Home & Kitchen,manu3
+P064,Glass Food Storage Set,49.00,Home & Kitchen,manu4
+P065,Stainless Steel Knife Set,69.00,Home & Kitchen,manu5
+P005,Dyson V15 Detect Vacuum,2599.00,Home Appliances,manu5
+P006,Nutribullet 1000 Series,399.00,Home Appliances,manu1
+P007,Philips Air Fryer XXL,899.00,Home Appliances,manu2
+P035,Xiaomi Robot Vacuum S10,849.00,Home Appliances,manu5
+P036,Electric Kettle Stainless Steel,69.00,Home Appliances,manu1
+P058,Black+Decker Steam Iron,49.00,Home Appliances,manu3
+P059,Toshiba Microwave 20L,249.00,Home Appliances,manu4
+P060,Krypton Electric Oven,299.00,Home Appliances,manu5
+P061,Geepas Blender 750W,129.00,Home Appliances,manu1
+P062,Delonghi Coffee Machine,699.00,Home Appliances,manu2
+P024,Dettol Antibacterial Wipes,16.00,Personal Care,manu4
+P025,Nivea Soft Moisturizer 300ml,22.00,Personal Care,manu5
+P018,Ring Doorbell Pro 2,899.00,Smart Home,manu3
+P019,Google Nest Mini,199.00,Smart Home,manu4
+P020,Amazon Echo Dot 5th Gen,229.00,Smart Home,manu5
+P033,Gym Dumbbells Set 10KG,129.00,Sports,manu3
+P034,Yoga Mat Non-Slip,39.00,Sports,manu4
+P096,Protein Powder Whey 2kg,149.00,Sports,manu1
+P097,Treadmill Electric Foldable,1399.00,Sports,manu2
+P098,Adjustable Dumbbell 24KG,399.00,Sports,manu3
+P099,Bicycle Helmet Adult,89.00,Sports,manu4
+P100,Football – Adidas UEFA,129.00,Sports,manu5
+P009,Apple Watch Series 9,1599.00,Wearables,manu4
+P010,Fitbit Versa 4,899.00,Wearables,manu5
+P079,Smart Fitness Band,69.00,Wearables,manu4
