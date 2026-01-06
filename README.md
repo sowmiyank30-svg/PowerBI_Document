@@ -2,6 +2,18 @@
 
 > **Power BI Portfolio Project** – End-to-end analytics solution for e-commerce sales, performance, and product insights.
 
+
+Page 1.1
+![DB Page 1.1](/Image/Revenue.png)
+
+Page 1.2
+![DB Page 1.2](/Image/Quantity.png)
+
+Page 2
+![DB Page 2](/Image/Sales.png)
+
+Page 2
+![DB Page 3](/Image/Product.png)
 ---
 
 ## Table of Contents
@@ -14,9 +26,9 @@
 * [Dashboard Pages](#dashboard-pages)
 * [Parameters & Bookmarks](#parameters--bookmarks)
 * [Use Cases](#use-cases)
-* [BPMN](#bpmn)
 * [Flowchart](#flowchart)
 * [Security](#security)
+*  [SkillShowcased](SkillShowcased)
 * [Conclusion](#conclusion)
 
 ---
@@ -82,7 +94,6 @@ The purpose of this dashboard is to provide stakeholders with a single, interact
 | Calendar   | DAX        | Date dimension table                 |
 | UserAccess | CSV        | Role-based access mapping            |
 
-
 ---
 
 ## 5. Data Model & Relationships
@@ -107,7 +118,6 @@ Schema Type: **Star Schema**
              |
          UserAccess
 
-
 ---
 
 ## 6. Functional Requirement Specification (FRS)
@@ -118,6 +128,11 @@ Schema Type: **Star Schema**
 * Delivered orders selected by default
 * Clear All Slicer button resets all filters
 * Interactive visuals responding to slicers
+* KPI cards display total customers, total revenue, total orders, total quantity
+* Charts must respond dynamically to slicers
+* Top N product and city filters implemented
+* External links for current website orders and recently launched ads
+
 
 ---
 
@@ -129,7 +144,7 @@ Schema Type: **Star Schema**
 
 **KPIs (Cards):**
 
-* Total Customers (2023–2025)
+* Total Customers
 * Total Revenue
 * Total Orders
 * Total Quantity Sold
@@ -137,28 +152,8 @@ Schema Type: **Star Schema**
 **Charts:**
 
 * Donut Chart: Total Orders by Year
-Orders by Year = 
-SUMMARIZE(
-    Orders,
-    Calendar[Year],
-    "TotalOrders", COUNTROWS(Orders)
-)
 * Clustered Column: Revenue by Year
-Revenue by Year = 
-SUMMARIZE(
-    Orders,
-    Calendar[Year],
-    "Revenue", SUM(Orders[TotalAmount])
-)
-* Clustered Bar: Revenue / Quantity by Product (via bookmarks)
-Revenue by Product = 
-SUMMARIZE(
-    Orders,
-    Products[ProductName],
-    "Revenue", SUM(Orders[TotalAmount])
-)
-
-
+* Clustered Bar: Revenue / Quantity by 
 
 **Filters:**
 
@@ -166,9 +161,35 @@ SUMMARIZE(
 * Delivery Status (default: Delivered)
 * Product Name slicer
 
+**DAX Measures:**
+Converts the Orders[OrderDate] column to Date data type.
+
+Allows creation of a Date hierarchy for visuals like Year, Month, Day.
+
+```DAX
+OrderDateFixed = 
+DATEVALUE(Orders[OrderDate])
+```
+
+**Bookmarks**
+
+Bookmarks used for:
+
+* Revenue View
+
+![DB Page 1](/Image/Revenue.png)
+
+* Quantity View
+
+![DB Page 1](/Image/Quantity.png)
+
+* Clear All Filters
+
 ---
 
 ### 7.2 Business Performance Page
+
+![DB Page 1](/Image/Sales.png)
 
 **KPIs:**
 
@@ -192,9 +213,33 @@ SUMMARIZE(
 * Pie Chart: Sales by City
 * Table: Product sales (Quantity, Price, Discount, Revenue)
 
+**DAX Measures:**
+
+🔹 Total Sales
+
+Calculates the total sales amount from the Orders table.
+```DAX
+TotalSales = 
+SUM(Orders[TotalAmount])
+```
+
+
+Calculates the target value dynamically according to the selected year.
+
+Uses the Calendar table to match the year context with the Target table.
+```DAX
+TargetFORCE = 
+CALCULATE(
+    SUM(Target[Targets]),
+    TREATAS(VALUES(Calendar[Year]), Target[Year])
+)
+```
+
 ---
 
 ### 7.3 Product Performance Page
+
+![DB Page 1](/Image/Product.png)
 
 **KPIs:**
 
@@ -211,33 +256,84 @@ SUMMARIZE(
 * Product Name
 * Top N Product Parameter
 
-**Advanced Analytics:**
+**Advanced Analytics - DAX Measures:**
 
-* Top N Products Funnel
-* Bottom N Products Funnel
-* City-wise Quantity Sold (Top N)
+The dashboard uses several advanced DAX calculations to analyze product and city performance dynamically.
 
-**External Links:**
+🔹Top N Products Funnel
 
-* Current Website Orders
-* Recently Launched Ads
+```DAX
+IsTopNProduct = 
+VAR RankProduct =
+    RANKX(
+        ALL(Orders[ProductName]),
+        [Total Quantity Sold],
+        ,
+        DESC,
+        Dense
+    )
+RETURN
+IF(RankProduct <= 'TopN_Product'[TopN_Product Value], 1, 0)
+```
 
----
+Dynamically identifies the top N products based on quantity sold.
 
-## 8. Parameters & Bookmarks
+Controlled by the Top N Product Parameter.
 
-**Top N Product Parameter:**
+### 🔹 Bottom N Products Funnel
+
+```DAX
+IsBottonNProduct = 
+VAR RankProduct =
+    RANKX(
+        ALL(Orders[ProductName]),
+        [Total Quantity Sold],
+        ,
+        ASC,
+        Dense
+    )
+RETURN
+IF(RankProduct <= 'TopN_Product'[TopN_Product Value], 1, 0)
+```
+Dynamically identifies the bottom N products based on quantity sold.
+
+Controlled by the same Top N Product Parameter.
+
+### 🔹 City-wise Quantity Sold (Top N)
+```DAX
+Is Top N City = 
+VAR N =
+    SELECTEDVALUE(
+        TopN_Product[TopN_Product],
+        5
+    )
+RETURN
+IF([City Rank] <= N, 1, 0)
+```
+```DAX
+City Rank = 
+RANKX(
+    ALL(Orders[City]),
+    [Total Quantity Sold],
+    ,
+    DESC
+)
+```
+Ranks cities by total quantity sold.
+
+Flags only the Top N cities for visual display.
+
+N is dynamically adjustable via Top N Product Parameter.
+
+
+**Parameters**
+
+Top N Product Parameter:
 
 * Range: 1–20
 * Default: 10
 
 Used to dynamically control Top and Bottom performing products.
-
-Bookmarks used for:
-
-* Revenue View
-* Quantity View
-* Clear All Filters
 
 ---
 
@@ -273,13 +369,11 @@ Bookmarks used for:
 * Action: Click Clear All Slicer
 * Result: Dashboard resets to default
 
-
 ---
 
 ## 10. Flowchart (Visual)
 
 ## Dashboard Data Flow (Flowchart)
-
 
 START                                           
   ↓  
@@ -300,17 +394,84 @@ Update Visuals
 END
 
 
+---
+
+
+## 11 Skills Showcased
+
+### Data Transformation (ETL) – Power Query
+- Cleaned, shaped, and prepared raw data
+- Handled missing values, blanks, duplicates, and extra spaces
+- Corrected data types for dates, numbers, and text
+- Created calculated columns and transformations for analysis readiness
 
 ---
 
-## 12. Security & Access Control
-
-* No database credentials stored in repository
-* User access controlled via UserAccess table
-* Row-level security implemented where required
+### Data Modeling
+- Designed a **Star Schema** for optimal performance
+- Established relationships between fact and dimension tables
+- Created a Calendar table using DAX for time intelligence
+- Implemented user access mapping for security filtering
 
 ---
 
-## 13. Conclusion
+### Data Analysis & DAX
+- Created measures using DAX for KPIs such as:
+  - Total Revenue
+  - Total Orders
+  - Total Quantity Sold
+  - Customer Count
+  - Target vs Achieved Sales
+- Used advanced DAX functions:
+  - `CALCULATE`, `SUM`, `RANKX`
+  - `SELECTEDVALUE` for dynamic parameters
+- Implemented **Top N / Bottom N analysis** using ranking logic
+
+---
+
+### Data Visualization
+- Designed interactive visuals including:
+  - Cards (KPIs)
+  - Pie & Donut Charts
+  - Clustered Column & Bar Charts
+  - Funnel Charts
+  - Tables & Matrix visuals
+- Applied consistent formatting and layout for clarity and usability
+
+---
+
+### Interactive Reporting
+- Implemented slicers for:
+  - Date (Year / Month / Day)
+  - Product
+  - City
+  - Salesman
+  - Delivery Status
+- Used **Buttons & Bookmarks** for:
+  - Revenue vs Quantity view switching
+  - Clear All Filters functionality
+- Enabled dynamic analysis using **What-If Parameters**
+
+---
+
+### Security & Governance
+- Implemented **Row-Level Security (RLS)** using a UserAccess table
+- Ensured no sensitive credentials are stored in the repository
+- Followed best practices for data access and governance
+
+---
+
+### Dashboard Design & Storytelling
+- Built a clean, business-focused dashboard layout
+- Organized visuals to support decision-making flow
+- Used text boxes and labels for clear data storytelling
+- Designed dashboards for both executive and operational users
+
+---
+
+
+## 12. Conclusion
 
 This E-Commerce Sales Dashboard provides a scalable, interactive, and business-ready analytics solution to track performance, identify opportunities, and support strategic decision-making across sales, products, and regions.
+
+
