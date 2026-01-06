@@ -3,16 +3,14 @@
 > **Power BI Portfolio Project** – End-to-end analytics solution for e-commerce sales, performance, and product insights.
 
 
-Page 1.1
+## Page 1
 ![DB Page 1.1](/Image/Revenue.png)
-
-Page 1.2
 ![DB Page 1.2](/Image/Quantity.png)
 
-Page 2
+## Page 2
 ![DB Page 2](/Image/Sales.png)
 
-Page 2
+## Page 3
 ![DB Page 3](/Image/Product.png)
 ---
 
@@ -393,9 +391,7 @@ Update Visuals
   ↓  
 END
 
-
 ---
-
 
 ## 11 Skills Showcased
 
