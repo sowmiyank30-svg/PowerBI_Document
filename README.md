@@ -33,9 +33,14 @@
 
 ## 1. Project Overview
 
-**Project Name:** E-Commerce Sales Analytics Dashboard   
-**Project Period:** 2023 – 2025    
-**Tool Used:** Microsoft Power BI
+**Project Name:** E-Commerce Sales Analytics Dashboard  
+**Project Period:** 2 Weeks  
+**Data Period Covered:** 2023 – 2025   
+**Tools & Technologies Used**:
+
+- **Microsoft Power BI** – Data modeling, DAX calculations, and interactive dashboard creation  
+- **SQL Server** – Data storage, querying, and data preparation  
+- **Microsoft Excel** – Initial data validation, cleaning, and exploratory analysis
 
 This project delivers a comprehensive analytics dashboard for an e-commerce business to monitor sales performance, customer acquisition, product trends, city-wise growth, salesman performance, and target achievement.
 
@@ -50,6 +55,7 @@ The purpose of this dashboard is to provide stakeholders with a single, interact
 * Analyze city-wise and salesman-wise performance
 * Monitor order delivery status (received, delivered, rejected)
 * Compare achieved sales against targets
+* To track customer Payment details
 * Support data-driven decision-making
 
 ---
@@ -58,12 +64,14 @@ The purpose of this dashboard is to provide stakeholders with a single, interact
 
 ### 3.1 Business Objectives
 
-* Improve visibility into e-commerce sales performance
-* Identify high and low performing products
-* Analyze regional (city-wise) demand
-* Track individual salesman contribution
-* Monitor yearly, quarterly, monthly, and daily trends
-* Enable leadership to focus on growth opportunities
+- Improve visibility into e-commerce sales performance by providing **city-wise and year-wise analysis** of revenue and quantity sold  
+- Identify **high-performing and low-performing products** to support data-driven decisions  
+- Analyze **regional (city-wise) demand patterns**  
+- Track **individual salesperson contributions** to overall sales  
+- Monitor **yearly, quarterly, monthly, and daily sales trends**  
+- Enable leadership to **identify growth opportunities and performance gaps**  
+- Raise and manage **IT support tickets** for Power BI–related issues, enhancements, and data discrepancies
+
 
 ### 3.2 Scope
 
@@ -371,7 +379,7 @@ Used to dynamically control Top and Bottom performing products.
 
 ## 10. Flowchart (Visual)
 
-## Dashboard Data Flow (Flowchart)
+## Simple Dashboard Data Flow (Flowchart)
 
 START                                           
   ↓  
