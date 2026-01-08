@@ -147,6 +147,7 @@ Schema Type: **Star Schema**
 ---
 
 ### 7.1 Overview Page
+**The Power BI dashboard provides real-time insights into retail operations, consolidating ERP, POS, CRM, and e-commerce data. It visualizes KPIs like Total Customers, Orders, Revenue, and Quantity Sold, tracks top/low-selling products, sales by city, and salesman performance. Interactive filters and bookmarks allow detailed analysis by product, date, region, and salesperson to support data-driven decisions and operational efficiency.**
 
 **KPIs (Cards):**
 
@@ -187,6 +188,9 @@ Bookmarks used for:
 
 * Quantity View
 
+**This page shows key KPIs including Total Customers, Total Revenue, Total Orders, and Total Quantity Sold. It visualizes orders by year in a donut chart, revenue by year and by product, and provides combined quantity and revenue analysis through bookmarks. Selecting quantity or revenue updates the view accordingly. Additional filters allow analysis by Order Date, Delivery Status, and Product Name for detailed performance tracking.**
+
+
 ![DB Page 1](/Image/Quantity.png)
 
 * Clear All Filters
@@ -194,6 +198,10 @@ Bookmarks used for:
 ---
 
 ### 7.2 Business Performance Page
+
+**This page shows yearly sales targets versus achieved values using gauges, along with detailed revenue and quantity sold analysis by product. It provides time-based insights across day, month, quarter, and year, and enables salesperson-wise analysis through checkboxes. Interactive dropdowns allow filtering by product, month, year, and other dimensions for detailed performance tracking.**
+
+
 
 ![DB Page 1](/Image/Sales.png)
 
@@ -244,6 +252,14 @@ CALCULATE(
 ---
 
 ### 7.3 Product Performance Page
+**This page provides insights into product performance, including:**
+
+* Top-selling and least-selling products visualized through a funnel chart
+* Sales distribution across cities using a pie chart
+* Salesman-wise quantity sold and revenue, with identification of underperforming salesmen
+* Key KPIs: Salesman Count, Quantity Sold, Revenue, and Orders Received
+* Order fulfillment metrics: orders received versus delivered
+* Interactive filters (slicers) for month, year, date, product, salesman, and city to enable detailed analysis
 
 ![DB Page 1](/Image/Product.png)
 
